@@ -25,6 +25,7 @@ import {
   FileText
 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { generateAndDownloadReport } from '@/lib/reportGenerator';
 
 function CaseDetailContent() {
   const params = useParams();
@@ -100,15 +101,14 @@ function CaseDetailContent() {
         </Link>
 
         {/* Download PDF Report Button */}
-        <a
-          href={`http://localhost:8000/api/cases/${caseData.id}/report/pdf`}
-          target="_blank"
-          rel="noopener noreferrer"
+        <button
+          type="button"
+          onClick={() => generateAndDownloadReport(caseData, lang)}
           className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0B6E4F] hover:bg-emerald-700 text-white text-xs font-bold shadow-md transition-all cursor-pointer"
         >
           <Download className="w-3.5 h-3.5" />
           {lang === 'bn' ? 'ডাউনলোড PDF রিপোর্ট' : 'Download PDF Report'}
-        </a>
+        </button>
       </div>
 
       {/* Case Header Card */}

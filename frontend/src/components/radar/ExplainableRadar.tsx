@@ -15,6 +15,8 @@ import {
   Info
 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
+import { api } from '@/lib/api';
+import { generateAndDownloadReport } from '@/lib/reportGenerator';
 
 interface Props {
   radar: ExplainableFraudRadar;
@@ -98,15 +100,45 @@ export default function ExplainableRadar({ radar, caseId }: Props) {
               </div>
 
               {/* Download PDF Risk Report */}
-              <a
-                href={`http://localhost:8000/api/cases/${caseId}/report/pdf`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0B6E4F] hover:bg-emerald-700 text-white text-xs font-bold shadow-md transition-colors"
+              <button
+                type="button"
+                onClick={async () => {
+                  try {
+                    const c = await api.getCase(caseId);
+                    if (c) {
+                      generateAndDownloadReport(c, lang);
+                      return;
+                    }
+                  } catch (e) {}
+                  generateAndDownloadReport({
+                    id: caseId,
+                    tracking_id: radar.tracking_id,
+                    user_id: 'citizen',
+                    title: `Verification of ${radar.tracking_id}`,
+                    description: 'BHUMIverse Automated Fraud Screening',
+                    district: 'Dhaka',
+                    upazila: 'Savar',
+                    mouza: 'Baunia',
+                    plot_khatian_summary: 'Dag 1025, Khatian 520',
+                    status: 'submitted',
+                    risk_level: radar.overall_risk_level,
+                    is_demo: true,
+                    submitted_at: new Date().toISOString(),
+                    updated_at: new Date().toISOString(),
+                    documents: [],
+                    land_records: [],
+                    transactions: [],
+                    findings: radar.findings,
+                    reviews: [],
+                    timeline: [],
+                    radar
+                  }, lang);
+                }}
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#0B6E4F] hover:bg-emerald-700 text-white text-xs font-bold shadow-md transition-colors cursor-pointer"
               >
                 <Download className="w-3.5 h-3.5" />
                 {lang === 'bn' ? 'ডাউনলোড PDF রিপোর্ট' : 'Download PDF Report'}
-              </a>
+              </button>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">

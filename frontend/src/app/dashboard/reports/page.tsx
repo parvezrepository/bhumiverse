@@ -7,6 +7,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import RiskBadge from '@/components/ui/RiskBadge';
 import StatusBadge from '@/components/ui/StatusBadge';
 import { Download, FileText, ArrowRight, ShieldAlert, CheckCircle2 } from 'lucide-react';
+import { generateAndDownloadReport } from '@/lib/reportGenerator';
 
 export default function ReportsPage() {
   const { lang } = useLanguage();
@@ -71,14 +72,13 @@ export default function ReportsPage() {
                       <StatusBadge status={c.status} />
                     </td>
                     <td className="py-3.5 px-4 text-right">
-                      <a
-                        href={`http://localhost:8000/api/cases/${c.id}/report/pdf`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0B6E4F] hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-colors"
+                      <button
+                        type="button"
+                        onClick={() => generateAndDownloadReport(c, lang)}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0B6E4F] hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-colors cursor-pointer"
                       >
                         <Download className="w-3.5 h-3.5" /> {lang === 'en' ? 'PDF Certificate' : 'PDF রিপোর্ট'}
-                      </a>
+                      </button>
                     </td>
                   </tr>
                 ))}

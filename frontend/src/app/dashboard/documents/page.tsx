@@ -105,12 +105,22 @@ export default function MyDocumentsPage() {
                       </span>
                     </td>
                     <td className="py-3.5 px-4 text-right">
-                      <Link
-                        href={`/dashboard/cases/${doc.case_id}`}
-                        className="inline-flex items-center gap-1 text-[#0B6E4F] hover:text-emerald-800 font-bold text-xs bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-2.5 py-1 rounded transition-colors"
-                      >
-                        {lang === 'en' ? 'View Case' : 'কেস দেখুন'} <ArrowRight className="w-3.5 h-3.5" />
-                      </Link>
+                      <div className="flex items-center justify-end gap-2">
+                        <a
+                          href={`/demo-documents/${doc.file_name}`}
+                          download={doc.file_name}
+                          className="inline-flex items-center gap-1 text-slate-700 hover:text-[#0B6E4F] font-bold text-xs bg-slate-100 hover:bg-emerald-50 border border-slate-200 px-2 py-1 rounded transition-colors"
+                          title={lang === 'en' ? 'Download Document' : 'ডকুমেন্ট ডাউনলোড'}
+                        >
+                          <Download className="w-3.5 h-3.5" />
+                        </a>
+                        <Link
+                          href={`/dashboard/cases/${doc.case_id}`}
+                          className="inline-flex items-center gap-1 text-[#0B6E4F] hover:text-emerald-800 font-bold text-xs bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 px-2.5 py-1 rounded transition-colors"
+                        >
+                          {lang === 'en' ? 'View Case' : 'কেস দেখুন'} <ArrowRight className="w-3.5 h-3.5" />
+                        </Link>
+                      </div>
                     </td>
                   </tr>
                 ))}

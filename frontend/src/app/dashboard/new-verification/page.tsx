@@ -13,7 +13,8 @@ import {
   FileText, 
   Sparkles,
   Lock,
-  UserCheck
+  UserCheck,
+  Download
 } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 
@@ -333,12 +334,12 @@ export default function NewVerificationPage() {
                   </span>
                   <a
                     href="/demo-documents/SAF_KABALA_DEED_10482_SAVAR.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[11px] font-bold text-[#0B6E4F] hover:underline"
+                    download="SAF_KABALA_DEED_10482_SAVAR.pdf"
+                    className="inline-flex items-center gap-1 text-[11px] font-bold text-[#0B6E4F] hover:underline"
                     title="Download Sample PDF"
                   >
-                    ডাউনলোড PDF ↗
+                    <Download className="w-3 h-3" />
+                    {lang === 'bn' ? 'ডাউনলোড PDF' : 'Download PDF'}
                   </a>
                 </div>
                 <div>
@@ -375,11 +376,12 @@ export default function NewVerificationPage() {
                   </span>
                   <a
                     href="/demo-documents/CONFLICTING_DEED_9102_2023.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[11px] font-bold text-rose-700 hover:underline"
+                    download="CONFLICTING_DEED_9102_2023.pdf"
+                    className="inline-flex items-center gap-1 text-[11px] font-bold text-rose-700 hover:underline"
+                    title="Download Sample PDF"
                   >
-                    ডাউনলোড PDF ↗
+                    <Download className="w-3 h-3" />
+                    {lang === 'bn' ? 'ডাউনলোড PDF' : 'Download PDF'}
                   </a>
                 </div>
                 <div>
@@ -416,11 +418,12 @@ export default function NewVerificationPage() {
                   </span>
                   <a
                     href="/demo-documents/MUTATION_KHATIAN_PORCHA_8842.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[11px] font-bold text-blue-700 hover:underline"
+                    download="MUTATION_KHATIAN_PORCHA_8842.pdf"
+                    className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-700 hover:underline"
+                    title="Download Sample PDF"
                   >
-                    ডাউনলোড PDF ↗
+                    <Download className="w-3 h-3" />
+                    {lang === 'bn' ? 'ডাউনলোড PDF' : 'Download PDF'}
                   </a>
                 </div>
                 <div>
@@ -457,11 +460,12 @@ export default function NewVerificationPage() {
                   </span>
                   <a
                     href="/demo-documents/ALTERED_PHOTOCOPY_DEED_FRAUD.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[11px] font-bold text-amber-800 hover:underline"
+                    download="ALTERED_PHOTOCOPY_DEED_FRAUD.pdf"
+                    className="inline-flex items-center gap-1 text-[11px] font-bold text-amber-800 hover:underline"
+                    title="Download Sample PDF"
                   >
-                    ডাউনলোড PDF ↗
+                    <Download className="w-3 h-3" />
+                    {lang === 'bn' ? 'ডাউনলোড PDF' : 'Download PDF'}
                   </a>
                 </div>
                 <div>

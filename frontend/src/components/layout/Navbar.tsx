@@ -97,11 +97,8 @@ function NavbarContent() {
               <div className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider leading-none">
                 {lang === 'bn' ? 'ভূমি রেকর্ড ও মালিকানা যাচাই প্ল্যাটফর্ম' : 'Land Record & Title Verification Platform'}
               </div>
-              <div className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight leading-tight mt-0.5 group-hover:text-[#006747] transition-colors flex items-center gap-2">
+              <div className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight leading-tight mt-0.5 group-hover:text-[#006747] transition-colors">
                 <span>BHUMI<span className="text-[#006747]">verse</span></span>
-                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-[#006747] border border-emerald-300">
-                  AI & Rule Engine
-                </span>
               </div>
               <div className="text-xs font-semibold text-slate-600 flex items-center gap-1.5 mt-0.5">
                 <span>
