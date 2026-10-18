@@ -190,7 +190,7 @@ npm install
 # Start Next.js development server (Port 3000)
 npm run dev
 ```
-*Web Application will be available at:* `http://localhost:3000`
+*Web Application will be available at:* `[http://localhost:3000](https://bhumiverse.vercel.app/)`
 
 ---
 
