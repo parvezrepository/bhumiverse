@@ -13,8 +13,8 @@ export default function Footer() {
           <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
           <span>
             {lang === 'bn' 
-              ? 'কপিরাইট © ২০২৬ সর্বস্বত্ব সংরক্ষিত: ভূমি মন্ত্রণালয়, গণপ্রজাতন্ত্রী বাংলাদেশ সরকার' 
-              : "Copyright © 2026 Ministry of Land, Government of the People's Republic of Bangladesh. All Rights Reserved."}
+              ? 'কপিরাইট © ২০২৬ সর্বস্বত্ব সংরক্ষিত: BHUMIverse প্ল্যাটফর্ম' 
+              : "Copyright © 2026 BHUMIverse Platform. All Rights Reserved."}
           </span>
         </div>
 

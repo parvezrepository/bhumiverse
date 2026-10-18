@@ -33,11 +33,11 @@ function NavbarContent() {
       {/* 1. Top National Portal Strip */}
       <div className="bg-[#004D34] text-white text-[11px] py-1 px-4 sm:px-6 lg:px-8 border-b border-[#003826]">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-          {/* Left: Bangladesh Government Affiliation */}
+          {/* Left: Platform Category */}
           <div className="flex items-center gap-3">
             <span className="font-semibold text-emerald-100 flex items-center gap-1.5">
               <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-              {lang === 'bn' ? 'গণপ্রজাতন্ত্রী বাংলাদেশ সরকার | ভূমি মন্ত্রণালয়' : "Government of the People's Republic of Bangladesh | Ministry of Land"}
+              {lang === 'bn' ? 'স্মার্ট ভূমি রেকর্ড ভেরিফিকেশন ও জালিয়াতি প্রতিরোধ' : 'Smart Land Record Verification & Fraud Prevention'}
             </span>
             <span className="hidden md:inline text-emerald-300">|</span>
             <span className="hidden md:inline text-amber-300 font-medium">
@@ -45,11 +45,11 @@ function NavbarContent() {
             </span>
           </div>
 
-          {/* Right: Hotline 16122 & Language Switcher */}
+          {/* Right: Hotline & Language Switcher */}
           <div className="flex items-center gap-3">
             <div className="hidden sm:flex items-center gap-1.5 text-amber-300 font-bold bg-[#003826] px-2.5 py-0.5 rounded border border-emerald-700/60">
               <PhoneCall className="w-3 h-3 text-amber-300" />
-              <span>{lang === 'bn' ? 'ভূমিসেবা হেল্পলাইন: ১৬১২২' : 'Land Helpline: 16122'}</span>
+              <span>{lang === 'bn' ? 'BHUMIverse হেল্পডেস্ক: ২৪/৭ সাপোর্ট' : 'BHUMIverse Helpdesk: 24/7 Support'}</span>
             </div>
 
             {/* Language Toggle: বাং | EN */}
@@ -79,32 +79,33 @@ function NavbarContent() {
         </div>
       </div>
 
-      {/* 2. Official Government Portal Header (land.gov.bd Style) */}
+      {/* 2. Platform Header */}
       <div className="bg-white border-b border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
           
-          {/* Left: Official Government Seal & Ministry Branding */}
+          {/* Left: BHUMIverse Logo & Branding */}
           <Link href="/" className="flex items-center gap-3.5 group">
-            <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-full bg-slate-50 border border-slate-200 shadow-xs group-hover:scale-105 transition-transform overflow-hidden">
+            <div className="w-12 h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-emerald-50 border border-emerald-200 shadow-xs group-hover:scale-105 transition-transform overflow-hidden p-1">
               <img 
-                src="/bd-govt-logo.svg" 
-                alt="Government of Bangladesh Seal" 
-                className="w-11 h-11 object-contain" 
+                src="/logo.png" 
+                alt="BHUMIverse Logo" 
+                className="w-10 h-10 object-contain" 
               />
             </div>
 
             <div>
-              <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wide leading-none">
-                {lang === 'bn' ? 'গণপ্রজাতন্ত্রী বাংলাদেশ সরকার' : "Government of the People's Republic of Bangladesh"}
+              <div className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider leading-none">
+                {lang === 'bn' ? 'ভূমি রেকর্ড ও মালিকানা যাচাই প্ল্যাটফর্ম' : 'Land Record & Title Verification Platform'}
               </div>
-              <div className="text-lg sm:text-xl font-black text-[#006747] tracking-tight leading-tight mt-0.5 group-hover:text-emerald-800 transition-colors">
-                {lang === 'bn' ? 'ভূমি মন্ত্রণালয়' : 'Ministry of Land'}
+              <div className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight leading-tight mt-0.5 group-hover:text-[#006747] transition-colors flex items-center gap-2">
+                <span>BHUMI<span className="text-[#006747]">verse</span></span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-[#006747] border border-emerald-300">
+                  AI & Rule Engine
+                </span>
               </div>
-              <div className="text-xs font-bold text-slate-700 flex items-center gap-1.5 mt-0.5">
-                <span>BHUMIverse</span>
-                <span className="text-slate-400 font-normal">•</span>
-                <span className="text-slate-500 font-medium">
-                  {lang === 'bn' ? 'ভূমি জালিয়াতি ও দ্বৈত বিক্রয় শনাক্তকরণ প্ল্যাটফর্ম' : 'AI-Assisted Land Fraud & Double-Selling Detection'}
+              <div className="text-xs font-semibold text-slate-600 flex items-center gap-1.5 mt-0.5">
+                <span>
+                  {lang === 'bn' ? 'ভূমি জালিয়াতি ও দ্বৈত বিক্রয় শনাক্তকরণ সিস্টেম' : 'Land Fraud & Double-Selling Prevention System'}
                 </span>
               </div>
             </div>

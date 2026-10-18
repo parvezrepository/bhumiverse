@@ -66,9 +66,9 @@ export default function AdminLoginPage() {
       <div className="bg-[#0B6E4F] text-white py-2 px-4 text-xs">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="font-bold">গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</span>
+            <span className="font-bold">BHUMIverse প্ল্যাটফর্ম</span>
             <span>|</span>
-            <span className="text-emerald-200">ভূমি মন্ত্রণালয়</span>
+            <span className="text-emerald-200">অ্যাডমিন ও রিভিউয়ার পোর্টাল</span>
           </div>
           <Link href="/" className="inline-flex items-center gap-1 text-emerald-100 hover:text-white font-bold">
             <Home className="w-3.5 h-3.5" /> হোমপেজ
@@ -85,7 +85,7 @@ export default function AdminLoginPage() {
             </div>
             <h1 className="text-2xl font-black text-slate-900 tracking-tight">কর্মকর্তা প্রবেশাধিকার (Admin Portal)</h1>
             <p className="text-xs text-slate-600">
-              শুধুমাত্র ভূমি মন্ত্রণালয়, এসিল্যান্ড ও সাব-রেজিস্ট্রার অনুমোদিত কর্মকর্তাদের জন্য
+              শুধুমাত্র BHUMIverse প্ল্যাটফর্মের অনুমোদিত কর্মকর্তা ও ল্যান্ড রিভিউয়ারদের জন্য
             </p>
           </div>
 
@@ -176,7 +176,7 @@ export default function AdminLoginPage() {
       </main>
 
       <footer className="py-4 border-t border-slate-200 text-center text-xs text-slate-500 bg-white">
-        © ২০২৬ BHUMIverse • গণপ্রজাতন্ত্রী বাংলাদেশ সরকার
+        © ২০২৬ BHUMIverse • ল্যান্ড ফ্রড প্রিভেনশন প্ল্যাটফর্ম
       </footer>
     </div>
   );

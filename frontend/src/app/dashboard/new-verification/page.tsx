@@ -29,14 +29,24 @@ export default function NewVerificationPage() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const session = localStorage.getItem('bhumiverse_citizen_session');
-      setIsAuthenticated(!!session);
+      if (!session) {
+        localStorage.setItem('bhumiverse_citizen_session', JSON.stringify({
+          email: 'citizen@bhumiverse.internal',
+          full_name: 'Parvez Ahmed',
+          nid: 'NID-8841-XXXX',
+          logged_in_at: new Date().toISOString()
+        }));
+      }
+      setIsAuthenticated(true);
     }
   }, []);
 
   const handleInstantCitizenLogin = () => {
     if (typeof window !== 'undefined') {
       localStorage.setItem('bhumiverse_citizen_session', JSON.stringify({
-        email: 'citizen@land.gov.bd',
+        email: 'citizen@bhumiverse.internal',
+        full_name: 'Parvez Ahmed',
+        nid: 'NID-8841-XXXX',
         logged_in_at: new Date().toISOString()
       }));
       api.setRole('citizen');
@@ -134,32 +144,34 @@ export default function NewVerificationPage() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6">
-      {/* Unauthenticated Security Alert */}
-      {!isAuthenticated && (
-        <div className="p-4 rounded-xl bg-amber-50 border border-amber-300 text-amber-900 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <Lock className="w-5 h-5 text-amber-600 flex-shrink-0" />
-            <div>
-              <p className="font-bold text-sm">
-                {lang === 'bn' ? 'জমি যাচাই আবেদন জমা দিতে নাগরিক লগইন করুন' : 'Sign in to submit land verification cases'}
-              </p>
-              <p className="text-xs text-amber-700">
-                {lang === 'bn' ? 'ডেমো মূল্যায়নের জন্য সরাসরি ১-ক্লিক লগইন ব্যবহার করুন।' : 'Use 1-click demo login for instant hackathon evaluation.'}
-              </p>
-            </div>
+      {/* Consistent Demo Citizen Identity Banner */}
+      <div className="p-3.5 rounded-xl bg-emerald-50/90 border border-emerald-300 text-emerald-900 shadow-2xs flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div className="flex items-center gap-3">
+          <div className="w-8 h-8 rounded-full bg-[#0B6E4F] text-white flex items-center justify-center font-bold text-xs shadow-xs">
+            P
           </div>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={handleInstantCitizenLogin}
-              type="button"
-              className="px-3.5 py-1.5 bg-[#0B6E4F] hover:bg-emerald-700 text-white rounded-lg text-xs font-bold transition-all shadow-xs flex items-center gap-1.5 cursor-pointer"
-            >
-              <UserCheck className="w-3.5 h-3.5" />
-              {lang === 'bn' ? 'ডেমো নাগরিক লগইন' : 'Demo 1-Click Login'}
-            </button>
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="font-bold text-xs text-slate-900">
+                {lang === 'bn' ? 'পারভেজ আহমেদ' : 'Parvez Ahmed'}
+              </span>
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-[#0B6E4F] border border-emerald-300">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                {lang === 'bn' ? 'নাগরিক ভেরিফাইড (ডেমো)' : 'Verified Citizen (Demo)'}
+              </span>
+            </div>
+            <p className="text-[11px] text-slate-600 mt-0.5">
+              {lang === 'bn'
+                ? 'নাগরিক আইডি: NID-8841-XXXX • আপনার প্রোফাইল দিয়ে সরাসরি নতুন জমি যাচাইকরণ আবেদন করতে পারেন।'
+                : 'Citizen ID: NID-8841-XXXX • You can directly submit land verification requests with this profile.'}
+            </p>
           </div>
         </div>
-      )}
+        <div className="flex items-center gap-2 text-[11px] font-semibold text-emerald-800 bg-white/90 px-3 py-1.5 rounded-lg border border-emerald-200">
+          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>{lang === 'bn' ? 'স্বয়ংক্রিয় এআই ইঞ্জিন সক্রিয়' : 'Automated AI Engine Active'}</span>
+        </div>
+      </div>
 
       {/* Wizard Header */}
       <div className="p-6 rounded-2xl border border-slate-200 bg-white shadow-2xs">

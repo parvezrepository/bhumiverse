@@ -14,7 +14,7 @@ const translations: Record<Language, Record<string, string>> = {
   bn: {
     // Top Ribbon
     'gov.date': 'রবিবার, ৩ কার্তিক ১৪৩৩ ১৮ অক্টোবর ২০২৬',
-    'gov.sub_header': 'গণপ্রজাতন্ত্রী বাংলাদেশ সরকার | ভূমি মন্ত্রণালয়',
+    'gov.sub_header': 'স্মার্ট ভূমি রেকর্ড ভেরিফিকেশন ও জালিয়াতি প্রতিরোধ প্ল্যাটফর্ম',
     'gov.hackathon': 'LandTech Innovation Hackathon 2026',
     'gov.p3': 'Problem P3: ভূমি জালিয়াতি ও দ্বৈত বিক্রয় শনাক্তকরণ',
 
@@ -138,7 +138,7 @@ const translations: Record<Language, Record<string, string>> = {
   en: {
     // Top Ribbon
     'gov.date': 'Sunday, 18 October 2026',
-    'gov.sub_header': "Government of the People's Republic of Bangladesh | Ministry of Land",
+    'gov.sub_header': "Smart Land Record Verification & Fraud Prevention Platform",
     'gov.hackathon': 'LandTech Innovation Hackathon 2026',
     'gov.p3': 'Problem P3: Land Fraud & Double-Selling Risk Detection',
 

@@ -111,10 +111,10 @@ function DashboardNavContent({ children }: { children: React.ReactNode }) {
               P
             </div>
             <div className="overflow-hidden">
-              <span className="text-xs font-bold text-slate-900 block truncate">{user?.full_name || 'Parvez Ahmed'}</span>
+              <span className="text-xs font-bold text-slate-900 block truncate">{user?.full_name || (lang === 'bn' ? 'পারভেজ আহমেদ' : 'Parvez Ahmed')}</span>
               <span className="text-[10px] text-[#0B6E4F] font-mono flex items-center gap-1 font-semibold">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                {lang === 'bn' ? 'নাগরিক ভেরিফাইড' : 'Verified Citizen'}
+                {lang === 'bn' ? 'নাগরিক ভেরিফাইড (ডেমো)' : 'Verified Citizen (Demo)'}
               </span>
             </div>
           </div>

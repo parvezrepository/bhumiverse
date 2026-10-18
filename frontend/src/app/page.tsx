@@ -175,7 +175,7 @@ export default function LandingPage() {
             <div className="lg:col-span-7 space-y-4">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-emerald-50 text-[#006747] border border-emerald-300 text-xs font-bold shadow-2xs">
                 <span className="w-2 h-2 rounded-full bg-[#006747]"></span>
-                <span>{lang === 'bn' ? 'স্মার্ট ভূমি সেবা ২০৪১ | গণপ্রজাতন্ত্রী বাংলাদেশ সরকার' : 'Smart Land Services 2041 | Ministry of Land'}</span>
+                <span>{lang === 'bn' ? 'স্মার্ট ভূমি রেকর্ড ভেরিফিকেশন ও জালিয়াতি প্রতিরোধ | BHUMIverse' : 'Smart Land Record Verification & Fraud Prevention | BHUMIverse'}</span>
               </div>
 
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight leading-snug">
